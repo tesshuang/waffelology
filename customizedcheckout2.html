@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Check Out Cart</title>
+        <style>
+        .emptycart{
+               font-size: 20pt;
+                width: 400px;
+                height: 100px;
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                color: darkmagenta;
+            }
+            
+            .premadeItem{
+                
+                width: 100px;
+                height: 100px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="waffleimg">
+        <div id="top"></div>
+        <div id="mid"></div>
+        <div id="bottom"></div>    
+        </div>
+        <div id='allItems'></div>
+        <div id='final'></div>
+        <button><a href="customized-product.html">Back to Customized Page</a> </button>     
+        <button><a href="product.html">Back to Favourite Page</a></button>
+        <br>
+        <button><a  href="completion.html">Complete</a></button>
+        
+        <script>
+            function checkload(){
+                if(localStorage.length == 0){
+                    var emptycart = document.createElement('div');
+                    emptycart.className = "emptycart";
+                    emptycart.innerHTML = "Oh no! Your Cart is currently empty.<br>Choose your favourite waffle."
+                    document.body.appendChild(emptycart);
+                }
+                
+                else {
+                    
+                        var allItems = JSON.parse(localStorage.getItem("cartItems"));
+                        console.log(allItems);
+                        var allspan = [];
+
+                        var toppings = ["You didn't your toppings","Top_Ice_vani.png","Top_Ice_Mat.png","Top_Ice_Tara.png","Top_Ice_coco.png","Top_Ice_man.png"];
+                        var middle = ["","Top_straw.png", "Top_kiwi.png","Top_blue.png","Top_bana.png","Top_oreo.png","Top_whit_cho.png","Top_dark_cho.png","Top_nutella.png"]
+                        var bottoms = ["",  "waffle1.png", "waffle2.png","waffle3.png","waffle4.png","waffle5.png"];
+                        var premadeItem =["","./productImages/sw01.jpg","./productImages/sa01.jpg", "./productImages/as01.jpg"];
+                    
+                        var waffleimg = document.getElementById('waffleimg');
+                        var mtop = document.getElementById('top');
+                        var mmid = document.getElementById('mid');
+                        var mbottom = document.getElementById('bottom');
+                    
+                       
+
+                        for(var i = 0; i<allItems.length; i++){
+                            console.log("HEllO HENRY");
+
+                            if(allItems[i].premadeItem == false) {
+                                var nimg = document.createElement('img');
+                                console.log(allItems[i].premadeNum);
+                                nimg.src = premadeItem[allItems[i].premadeNum];
+                                nimg.className = "premadeItem";
+                                waffleimg.appendChild(nimg);    
+                            
+                                }
+                            
+                            else{
+                                
+
+                                var nimg1 = document.createElement('img');
+                                nimg1.style.width = "80px";  
+                                nimg1.src = bottoms[allItems[i].waffle.bottomItem];
+                                mbottom.appendChild(nimg1);
+
+                                var nimg2 = document.createElement('img');
+                                nimg2.style.width = "80px";
+                                nimg2.src = middle[allItems[i].waffle.midItem];
+                                mmid.appendChild(nimg2);
+
+                                var nimg3 = document.createElement('img');
+                                nimg3.style.width = "80px";
+                                nimg3.src = toppings[allItems[i].waffle.topItem];
+                                mtop.appendChild(nimg3);
+                                
+                                console.log(nimg3);
+                                }
+                            
+                                var ndiv = document.createElement("div"); 
+                                var priceText = document.createElement("span");
+                                var price = document.createElement("span"); 
+                                var amount = document.createElement("input");
+                                var total = document.createElement('div');
+                                var mdelete = document.createElement('img');
+                                allspan.push(price);
+
+                                priceText.innerHTML = " x Price for item "+ (i+1) +": ";
+                                priceText.style.margin = "10px";
+                                priceText.appendChild(price);
+
+                                amount.value = allItems[i].amount;
+
+                                price.innerText = parseFloat(amount.value) * allItems[i].price;
+
+                                //new  associate amount with price
+                                amount.waid = price;
+                                amount.wacd = i;
+
+                                amount.addEventListener("keyup", function(){
+                                    this.waid.innerText = parseInt(this.value)*allItems[this.wacd].price;
+                                    allItems[this.wacd].amount = this.value;
+
+                                    var total = 0;
+                                    console.log(allspan);
+                                    for(var j =0; j<allspan.length; j++){
+                                        total += parseFloat(allspan[j].innerHTML);
+                                    }
+
+                                    document.getElementById("final").innerHTML = total;
+
+                                });
+
+                                    var total = 0;
+                                    for(var j =0; j<allspan.length; j++){
+                                        total += parseFloat(allspan[j].innerHTML);
+                                    }
+
+                                    document.getElementById("final").innerHTML = total;
+
+                                    mdelete.src = "./Trash.png";
+                                    mdelete.style.width = "30px";
+                                    mdelete.mydiv = ndiv;
+                                    mdelete.myindex = i;
+
+                                    mdelete.addEventListener('click', function(){
+                                        allItems.splice(this.myindex, 1);
+                //                        allspan.splice(this.myindex, 1);
+                //                        document.getElementById("allItems").removeChild(this.mydiv);
+                                        localStorage.setItem("cartItems", JSON.stringify(allItems));
+                                        location.reload();
+                                        console.log(allItems);
+                                    });
+
+                                ndiv.appendChild(amount);
+                                ndiv.appendChild(priceText);
+                                ndiv.appendChild(mdelete);
+                                document.getElementById("allItems").appendChild(ndiv);
+
+                            
+
+
+                        }
+                }
+           }
+            
+                window.onload = checkload;
+
+        </script>
+    </body>
+</html>

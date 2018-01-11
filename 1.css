@@ -1,0 +1,101 @@
+
+.mainsession{
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    top: 100px;
+}
+
+.sidebar{
+    display: table;
+    background-color: #D7CCF5;
+    position: relative;
+    width: 28%;
+    height: 900px;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+    color: #270C5B;
+}
+
+.sidebar a{
+    font-size: 24pt;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 20px;
+}
+.sidebar a:hover{
+    color: white;
+}
+.sidebar button{
+    background-color: none;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 22pt;
+    margin: 10px;
+}
+.sidebar button:hover{
+    color: white;
+}
+
+.fapics{
+    position: relative;
+    width: 70%;
+    height: 750px;
+    float: right;
+    margin: auto;
+}
+.fapics h2{
+    text-align: center;
+    font-family : Pacifico;
+    font-size : 52px;
+    color : #270C5B;
+}
+
+.row1{
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+.i1d, .i3d{
+    position: relative;
+    text-align: center;
+    float: left;
+    width: 48%;
+}
+.i2d, .i4d{
+    position: relative;
+    text-align: center;
+    float: right;
+    width: 48%;
+}
+
+.i1d img{
+    height: 250px;
+    border: none;
+}
+.i2d img{
+    height: 250px;
+    border: none;
+}
+.i3d img{
+    
+    height: 250px;
+    border: none;
+   
+}
+.i4d img{
+    
+    height: 250px;
+    border: none;
+}
+
+.i1d div, .i2d div, .i3d div, .i4d div{
+    position:relative;
+    text-align: center;
+}
+
+#img1{
+    cursor: pointer;
+}

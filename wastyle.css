@@ -1,0 +1,420 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: DinPro;
+}
+.wrapper{
+    position: absolute;
+    width: 100vw;
+    height: auto;
+}
+#header{
+    font-family: 'Pacifico', cursive;
+    width: 100vw;
+    background-color: #270C5B;
+    position: fixed;
+    z-index: 1;
+}
+#header ul{
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+    width: 35%;
+    
+}
+#header ul li{
+    display: inline-block;
+    margin: 15px;
+}
+#header ul li a{
+    font-size: 15pt;
+    color: white;
+    text-decoration: none;
+    
+}
+#header ul li a:hover{
+    color: #CBBDF2;
+}
+#header ul.left{
+    text-align: right;
+       padding: 10px;
+}
+.left{
+    float: left;
+}
+#header ul.right{
+    text-align: center;
+    padding: 10px;
+}
+.right{
+    float: right;
+}
+#weblogo{
+    display: block;
+    width: 125px;
+    height: 75px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+#cartIcon{
+    width: 25px;
+    position: absolute;
+    right: 40px;
+    top: 10px;
+}
+.mobilemenu{
+    float: left;
+    position: absolute;
+    width: 200px;
+    height: 80%;
+    bottom: 120px;
+    background-color: rgba(203,189,242,0.5);
+    
+}
+.mobilemenu dl{
+    margin-top: 200px;
+    margin-left: 10px;
+}
+.mobilemenu a{
+    font-family: 'Pacifico', cursive;
+    color: #270C5B;
+    font-size: 16pt;
+    
+}
+.mobilemenu a:hover{
+    color: white;
+}
+#togglemobile-menu{
+    position: absolute;
+    top: 40px;
+    left: 10px;
+}
+
+.welcomesession {
+    position: relative;
+    width: 100%;
+    height: 500px;
+   
+}
+.welcomesession img {
+    top: 80px;
+    position: relative;
+    width: 100vw;
+    height: 420px;
+}
+.welcomesession h1{
+    position: relative;
+    top: -300px;
+    font-family: 'Pacifico', cursive;
+    color: #270C5B;
+    text-align: center;
+    font-size: 36pt;
+}
+.CreateYO{
+    position: relative;
+    width: 100%;
+}
+.step1{
+    position: relative;
+    margin: 0;
+    
+}
+.step1 img{
+    float: left;
+    width: 33%;
+    
+}
+.step2{
+    position: relative;
+    display: inline;
+    margin-left: 3px;
+    
+}
+.step2 img{
+    width: 33%;
+}
+.step3{
+    position: relative;
+    display: inline;
+    margin: 0;
+    
+}
+.step3 img{
+    float: right;
+    width: 33%;
+}
+.aboutsession{
+    position: relative;
+    width: 100vw;
+    padding: 5px;
+    height: 495px;
+}
+.aboutmsg{
+    position: relative;
+    margin: 0;
+    float: left;
+    width: 48%;
+    height: 450px;
+    background-color: #270C5B;
+    
+}
+.aboutmsg h1{
+    color: #ffde8a;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+}
+.aboutmsg p{
+    color: #d1d3d4;
+    font-size: 14pt;
+    text-align: center; 
+}
+.vipmember{
+    position: relative;
+    float: right;
+    width: 48%;
+    
+}
+.mem1, .mem2, .mem3{
+    width: 95%;
+}
+.mem1 img{
+    margin-top: 30px;
+    width: 20%;
+    float: left;
+    
+}
+.mem1 div{
+    width: 70%;
+    float: right;
+}
+.mem1 h4{
+    color: #ffde8a;
+    display: inline;
+}
+.mem1 span{
+    color: #ffde8a;
+}
+.mem2 img{
+    margin-top: 30px;
+    width: 20%;
+    float: left;
+    
+}
+.mem2 div{
+    width: 70%;
+    float: right;
+}
+.mem2 h4{
+    color: #ffde8a;
+    display: inline;
+}
+.mem2 span{
+    color: #ffde8a;
+}
+.mem3 img{
+    margin-top: 30px;
+    width: 20%;
+    float: left;
+    
+}
+.mem3 div{
+    width: 70%;
+    float: right;
+}
+.mem3 h4{
+    color: #ffde8a;
+    display: inline;
+}
+.mem3 span{
+    color: #ffde8a;
+}
+.contactsession{
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+.map{
+    position: relative;
+    width: 49%;
+    float: left;
+    
+}
+.map iframe{
+    width: 90%;
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+}
+.contactform{
+    position: relative;
+    width: 48%;
+    float: right;
+    background-color: #d7ccf5;
+   
+}
+.contactform h1{
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    margin: 5px;
+}
+.contactform form{
+    text-align: center;
+}
+.contactform form p{
+    display: inline-block;
+}
+.contactform form input{
+    width: 300px;
+    padding: 5px;
+    border: none;
+}
+.contactform form input[type=text]:focus {
+    background-color: #F0F3F2;
+}
+.contactform form textarea{
+    width: 300px;
+    padding: 5px;
+    height: 80px;
+    border: none;
+}
+.contactform form textarea:focus {
+    background-color: #F0F3F2;
+}
+.msgdisplay{
+    font-size: 8pt;
+    color: #F0F3F2;
+}
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    height: 200px;
+    background-color: #270C5B;
+}
+#weblogo2{
+    display: block;
+    width: 100px;
+    height: 65px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10px;
+    margin: auto;
+}
+
+.soMedia{
+    position: absolute;
+    width: 155px;
+    left: 0;
+    right: 0;
+    top: 80px;
+    margin: auto;
+}
+.soMedia img{
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+}
+.storeinfo{
+    position: absolute;
+    width: 320px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 120px;
+    text-align: center;
+    font-size: 9pt;
+    color: white;
+}
+.storeinfo p{
+    margin: 2px;
+}
+
+.complesession{
+    position: relative;
+    font-family: 'Pacifico', cursive;
+    color: #270C5B;
+    font-size: 25pt;
+    text-align: center;
+    top: 100px;
+    width: 100vw;
+    height: 500px;
+}
+
+.complesession span{
+    font-size: 18pt;
+}
+
+.productsession{
+    position: relative;
+    width: 800px;
+    height: 720px;
+    margin: auto;
+    top: 200px;
+}
+.productLeft{
+    width: 40%;
+    float: left;
+}
+.productLeft img{
+    padding:1px;
+    border:1px solid #021a40;
+    width: 280px;
+    height: 320px;
+}
+.productRight{
+    width: 48%;
+    text-align: left;
+    float: right;
+}
+.productRight h2{
+    margin-top: 0px;
+    color: #270C5B;
+    margin-bottom: 50px;
+}
+.productRight span{
+    margin-right: 10px;
+    
+}
+.addBut{
+    border: 1px solid #1d4b5e;
+    border-radius: 2px;
+    text-align: center;
+    padding: 8px 16px;
+    background-color: #82cced;
+    color: white;
+    font-size: 10pt;
+}
+.addBut:hover{
+    background-color: #1b4d5e;
+    cursor: pointer;
+}
+@media only screen and (max-width: 550px){
+    #header{
+        bottom: 0;
+        position: fixed;
+    }
+    #aboutUs{
+        display: none;
+    }
+    #contact{
+        display: none;
+    }
+    
+}
+
+
+@media only screen and (min-width: 550px) {
+    #togglemobile-menu{
+        display: none;
+    }
+    .mobilemenu{
+        display: none;
+    }
+
+}

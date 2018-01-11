@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Favourite - SW1</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type= "text/css" rel="stylesheet" href="wastyle.css">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    </head>
+    
+    <body>
+        
+        <div class="wrapper">
+        <div id="header">
+        
+         <img src="walogo.png" id="weblogo" alt="Logo"/>
+        <ul class="left">
+        <li ><a href="./index.html" id="aboutUs">About Us</a></li>
+            <li><a href="favourite.html" id="favourite">Favourite</a></li></ul>
+        <ul class="right">
+        <li><a href="./index.html" id="contact">Contact</a></li>
+        <li><a href="./custom.html" id="createOwn">Create Your Own</a></li>
+        </ul>
+        <img src="cart.png" id="cartIcon" alt="shoppingcart"/>
+        <a id="togglemobile-menu" href="#">
+            <svg width="30"  viewBox="0 0 168.75 116.78"><defs><style>.cls-1{fill:#ffde8a;}</style></defs><title>toggle</title><path class="cls-1" d="M159.87,17.75H8.88A8.88,8.88,0,1,1,8.88,0h151a8.88,8.88,0,0,1,0,17.75Z"/><path class="cls-1" d="M122.12,67.27H8.88a8.88,8.88,0,1,1,0-17.76H122.12a8.88,8.88,0,1,1,0,17.76Z"/><path class="cls-1" d="M48.4,116.78H8.88A8.88,8.88,0,1,1,8.88,99H48.4a8.88,8.88,0,0,1,0,17.75Z"/></svg>
+        </a>
+        </div>
+        
+        <div class="productsession">
+        <div class="productLeft">
+            <img src="./productImages/sw01.jpg" alt="strawbery waffle" id="sw01"/></div>
+        <div class="productRight">
+            <h2>Strawberries Princess</h2>
+            <h3>$10.99</h3>
+            <span>Quantity:</span><input type="number" id="quantity" min="1" max="99">
+            <br>
+            <br>
+            <button class="addBut" id='sub'>Add to Cart</button>
+            
+            <p>It’s 100% whole grain, made from wholesome ingredients, and adheres to the strictest of waffle standards: lightly crispy on the outside, golden and fluffy on the inside.</p>
+            
+            <button><a href='favourite.html'>Favourite page</a></button>
+            <button><a href='customizedcheckout2.html'>Check My CART</a></button>
+            </div>
+        </div>    
+        
+        <div class="footer">
+        <img src="walogo.png" alt="Logo" id='weblogo2'/>
+        <div class="soMedia">
+        <img src="./footer/facebook.png" alt="Facebook">
+        <img src="./footer/twitter.png" alt="Twitter">
+        <img src="./footer/pinterest.png" alt="Pinterest">
+        <img src="./footer/instagram.png" alt="Instagram"></div>
+        <div class="storeinfo">
+        <p>Address: 1836 West 4th Avenue, Vancouer BC</p>
+        <p>Business Hours: Mon - Fri 9am -5pm</p>
+        <p>Sat - Sun 9am - 6pm</p>
+        </div>
+        </div>
+            
+        <div class="mobilemenu">
+        <dl>
+            <dt><a>Menu</a></dt>
+            <dd><a>Sweet</a></dd>
+            <dd><a>Savoury</a></dd>
+            <dd><a>Afternoon Set</a></dd>
+            <dt><a>MyCart</a></dt></dl></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        <script>
+            var allItems = JSON.parse(localStorage.getItem('cartItems'));
+            var items = [];
+            var mquantity = document.getElementById('quantity');
+            if (allItems != null){
+                items = allItems;
+            }
+            
+            var standobj = {
+                    price:8.99,
+                    amount: 0,
+                    premadeItem: false,
+                    premadeNum: 1
+                    
+                };
+            
+            
+            
+            document.getElementById("sub").addEventListener("click", function(){
+                standobj.amount = mquantity.value;
+                standobj.premadeNum = 1;
+                items.push(standobj);
+                var txt = JSON.stringify(items);
+                console.log(standobj);
+                localStorage.setItem("cartItems", txt); 
+            });
+            
+            
+            
+        </script>
+    </body>
+</html>
