@@ -10,40 +10,56 @@
     
     <body>
         <div class="wrapper">
-        <div id="header">
-        
-         <img src="walogo.png" id="weblogo" alt="Logo"/>
-        <ul class="left">
-        <li ><a href="./index.html" id="aboutUs">About Us</a></li>
-            <li><a href="favourite.html" id="favourite">Favourite</a></li></ul>
-        <ul class="right">
-        <li><a href="./index.html" id="contact">Contact</a></li>
-        <li><a href="./custom.html" id="createOwn">Create Your Own</a></li>
-        </ul>
-        <img src="cart.png" id="cartIcon" alt="shoppingcart"/>
-        <a id="togglemobile-menu" href="#">
-            <svg width="30"  viewBox="0 0 168.75 116.78"><defs><style>.cls-1{fill:#ffde8a;}</style></defs><title>toggle</title><path class="cls-1" d="M159.87,17.75H8.88A8.88,8.88,0,1,1,8.88,0h151a8.88,8.88,0,0,1,0,17.75Z"/><path class="cls-1" d="M122.12,67.27H8.88a8.88,8.88,0,1,1,0-17.76H122.12a8.88,8.88,0,1,1,0,17.76Z"/><path class="cls-1" d="M48.4,116.78H8.88A8.88,8.88,0,1,1,8.88,99H48.4a8.88,8.88,0,0,1,0,17.75Z"/></svg>
-        </a>
-        </div>
+       <div id="header">
+				<img src="walogo.png" id="weblogo" alt="Logo"/>
+				<ul class="left">
+					<li ><a href="./Homepage.html" id="aboutUs">About Us</a></li>
+					<li><a href="favourite.html" id="favourite">Favourite</a></li>
+				</ul>
+				<ul class="right">
+					<li><a href="custom.html" id="createOwn">Create Your Own</a></li>
+                    <li><a href="./Homepage.html" id="contact">Contact</a></li>
+				</ul>
+                <img src="img/Menu.png" alt="togglebar" id="togglemobile-menu2"/>
+				<a href="Shoppingcart.html"><div class="cartIcon" id="cartIconbut"><span id="numnum"></span>
+                </div></a>
+				
+			</div>
         <div class="productsession">
         <div class="productLeft">
             <img src="./productImages/as01.jpg" alt="strawbery waffle" id="sw01"/></div>
         <div class="productRight">
             <h2>Afternoon Tea Set A</h2>
-            <h3>$10.99</h3>
+            <h3>$8.99</h3>
             <span>Quantity:</span><input type="number" id="quantity" min="1" max="99">
             <br>
             <br>
-            <button class="addBut" id='sub'>Add to Cart</button>
+            <button class="praddBut" id='sub'>Add to Cart</button>
             <p>The afternoon tea Set A is nevertheless a fuss-free way to wile away an afternoon with a nicely baked waffle. This afternoon set is one of the perfect combinations of a crispy egg waffle and a cup of classic cappucino.</p>
             
-            <button><a href='favourite.html'>Favourite page</a></button>
-            <button><a href='customizedcheckout2.html'>Check My CART</a></button>
+            <button class="linkbut"><a href='favourite.html'>Previous</a></button>
+            <button class="linkbut"><a href='Shoppingcart.html'>Check My CART</a></button>
             </div>
         </div>    
-        
-        <div class="footer">
-        <img src="walogo.png" alt="Logo" id='weblogo2'/>
+            <div class="mobilemenu" id="sidermove">
+            <div>
+            <a href="Homepage.html">Home</a>
+            <br>
+            <a href="custom.html">Create your Own</a>
+            <br>
+            <a href="favourite.html">Favourite</a>
+            <br>
+            <button id="sweet2">Sweet</button>
+            <br>
+            <button id="savoury2">Savoury</button>
+            <br>
+            <button id="afset2">Afternoon Set</button>
+            <br>
+            <br>
+            </div>
+        </div> 
+         <div class="footer">
+        <!--<img src="walogo.png" alt="Logo" id='weblogo2'/>-->
         <div class="soMedia">
         <img src="./footer/facebook.png" alt="Facebook">
         <img src="./footer/twitter.png" alt="Twitter">
@@ -54,7 +70,7 @@
         <p>Business Hours: Mon - Fri 9am -5pm</p>
         <p>Sat - Sun 9am - 6pm</p>
         </div>
-        </div>
+    </div>
         
         <div class="mobilemenu">
         <dl>
@@ -63,45 +79,9 @@
             <dd><a>Savoury</a></dd>
             <dd><a>Afternoon Set</a></dd>
             <dt><a>MyCart</a></dt></dl></div>
-        
-            
         </div>    
         
-        
-
-        
-        
-        
-        
-        <script>
-            var allItems = JSON.parse(localStorage.getItem('cartItems'));
-            var items = [];
-            var mquantity = document.getElementById('quantity');
-            if (allItems != null){
-                items = allItems;
-            }
-            
-            var standobj = {
-                    price:8.99,
-                    amount: 0,
-                    premadeItem: false,
-                    premadeNum: 3
-                    
-                };
-            
-            
-            
-            document.getElementById("sub").addEventListener("click", function(){
-                standobj.amount = mquantity.value;
-                standobj.premadeNum = 3;
-                items.push(standobj);
-                var txt = JSON.stringify(items);
-                console.log(standobj);
-                localStorage.setItem("cartItems", txt); 
-            });
-            
-            
-            
+        <script src = "AF1.js">
         </script>
     </body>
 </html>

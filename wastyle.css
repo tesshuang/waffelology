@@ -1,8 +1,17 @@
+/*General*/
+@font-face {
+    font-family: 'DINPro-Regular'; 
+    src: url('./fonts/DINPro-Regular.eot'); 
+    src: url('./fonts/DINPro-Regular.eot') format('eot'), 
+    url('./fonts/DINPro-Regular.otf') format('otf'), 
+    url('./fonts/DINPro-Regular.ttf') format('truetype'); 
+    }
+
 html, body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: DinPro;
+    font-family: DINPro-Regular, sans-serif;
 }
 .wrapper{
     position: absolute;
@@ -12,6 +21,7 @@ html, body{
 #header{
     font-family: 'Pacifico', cursive;
     width: 100vw;
+    height: 100px;
     background-color: #270C5B;
     position: fixed;
     z-index: 1;
@@ -21,7 +31,6 @@ html, body{
     margin: 10px;
     padding: 0;
     width: 35%;
-    
 }
 #header ul li{
     display: inline-block;
@@ -31,17 +40,16 @@ html, body{
     font-size: 15pt;
     color: white;
     text-decoration: none;
-    
 }
 #header ul li a:hover{
     color: #CBBDF2;
 }
 #header ul.left{
-    text-align: right;
-       padding: 10px;
+	text-align: right;
+	padding: 10px;
 }
 .left{
-    float: left;
+	float: left;
 }
 #header ul.right{
     text-align: center;
@@ -61,59 +69,158 @@ html, body{
     bottom: 0;
     margin: auto;
 }
-#cartIcon{
-    width: 25px;
+#weblogo:hover{
+    cursor: pointer;
+}
+.cartIcon{
+    /*width: 25px;
+    position: absolute;
+    right: 40px;
+    top: 10px;*/
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: url(cart.png) center no-repeat;
+    background-size: 30px;
     position: absolute;
     right: 40px;
     top: 10px;
+    display: block;
+    text-align: center;
+}
+.cartIcon span{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    font-size: 12pt;
+    position: absolute;
+    color: white;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    line-height: 15px;
+    background-color: #82cced;
+    box-shadow: 1px 2px 4px rgba(130, 204, 237, 0.6);
+    transform: scale(0);
+}
+.cartIcon span.counter{
+    left: 35px;
+    top: -15px;
+    transition: 0.5s ease;
+    transform: scale(1);
 }
 .mobilemenu{
     float: left;
     position: absolute;
-    width: 200px;
-    height: 80%;
+    width: 220px;
+    height: 100%;
     bottom: 120px;
     background-color: rgba(203,189,242,0.5);
-    
+    display: none;
 }
-.mobilemenu dl{
+.mobilemenu div{
     margin-top: 200px;
     margin-left: 10px;
-}
-.mobilemenu a{
+    position: fixed;
     font-family: 'Pacifico', cursive;
     color: #270C5B;
-    font-size: 16pt;
-    
+    font-size: 24pt;
+}
+.mobilemenu button{
+    font-family: 'Pacifico', cursive;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 14pt;
+    margin: 0px;
+    color: #270C5B;
+}
+.mobilemenu button:hover{
+    color: #d1d3d4;
+    cursor: pointer;
+}
+.mobilemenu a{
+    color:#270C5B;
+    font-size: 20pt;
+    text-decoration: none;
 }
 .mobilemenu a:hover{
     color: white;
+    cursor: pointer;
 }
 #togglemobile-menu{
-    position: absolute;
-    top: 40px;
-    left: 10px;
+    border: 1px solid #1d4b5e;
+    border-radius: 5px;
+    background-color: rgba(130, 204, 237,0.8);
+    padding: 0px 30px;
+    font-size: 14pt;
+    font-family: 'Pacifico', cursive;
+    transform: rotate(90deg);
+    position: fixed;
+    left: -35px;
+    top: 200px;
+    display: none;
 }
-
+#togglemobile-menu2{
+    width: 50px;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    display: none;
+}
+/*Homepage*/
 .welcomesession {
     position: relative;
     width: 100%;
     height: 500px;
-   
+    text-align: center;
+    background-image: url(./stra_hero2.jpg);
+    background-origin: border-box;
+    background-size: 100% 500px;
 }
-.welcomesession img {
-    top: 80px;
+.welcomesession div{
     position: relative;
+    top: 150px;
     width: 100vw;
-    height: 420px;
 }
 .welcomesession h1{
-    position: relative;
-    top: -300px;
     font-family: 'Pacifico', cursive;
-    color: #270C5B;
+    color: white;
     text-align: center;
     font-size: 36pt;
+    text-shadow: -3px 2px 8px black;
+}
+.welcomesession h1 span{
+    font-size: 50pt;
+    color: #270C5B;
+}
+.CTAbanner{
+    width: 100vw;
+    height: 80px;
+    position: relative;
+    text-align: center;
+    /*background-color: #F2F2F2;*/
+}
+.CTAbanner button{
+    margin-top: 8px;
+    border: 1px solid #1d4b5e;
+    border-radius: 5px;
+    background-color: #82cced;
+    padding: 10px 30px;
+    font-size: 14pt;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 0.5px 0.5px 0.5px #555555;   
+}
+.CTAbanner button:hover{
+    box-shadow: -2px 2px 8px #888888;
+    background-color: #1d4b5e;
+    cursor: pointer;
+}
+.CTAbanner button a{
+    text-decoration: none;
+    color: white;
 }
 .CreateYO{
     position: relative;
@@ -121,37 +228,32 @@ html, body{
 }
 .step1{
     position: relative;
-    margin: 0;
-    
+    margin: 0;   
 }
 .step1 img{
     float: left;
-    width: 33%;
-    
+    width: 33.2%;
 }
 .step2{
     position: relative;
     display: inline;
     margin-left: 3px;
-    
 }
 .step2 img{
-    width: 33%;
+    width: 33.2%;
 }
 .step3{
     position: relative;
     display: inline;
     margin: 0;
-    
 }
 .step3 img{
     float: right;
-    width: 33%;
+    width: 33.2%;
 }
 .aboutsession{
     position: relative;
     width: 100vw;
-    padding: 5px;
     height: 495px;
 }
 .aboutmsg{
@@ -160,8 +262,7 @@ html, body{
     float: left;
     width: 48%;
     height: 450px;
-    background-color: #270C5B;
-    
+    background-color: #270C5B; 
 }
 .aboutmsg h1{
     color: #ffde8a;
@@ -170,30 +271,29 @@ html, body{
 }
 .aboutmsg p{
     color: #d1d3d4;
-    font-size: 14pt;
-    text-align: center; 
+    font-size: 16pt;
+    text-align: center;
+    padding: 5px 15px;
 }
 .vipmember{
     position: relative;
     float: right;
     width: 48%;
-    
 }
 .mem1, .mem2, .mem3{
     width: 95%;
+    height: 150px;
 }
 .mem1 img{
     margin-top: 30px;
     width: 20%;
     float: left;
-    
 }
 .mem1 div{
     width: 70%;
     float: right;
 }
 .mem1 h4{
-    color: #ffde8a;
     display: inline;
 }
 .mem1 span{
@@ -203,14 +303,12 @@ html, body{
     margin-top: 30px;
     width: 20%;
     float: left;
-    
 }
 .mem2 div{
     width: 70%;
     float: right;
 }
 .mem2 h4{
-    color: #ffde8a;
     display: inline;
 }
 .mem2 span{
@@ -220,14 +318,12 @@ html, body{
     margin-top: 30px;
     width: 20%;
     float: left;
-    
 }
 .mem3 div{
     width: 70%;
     float: right;
 }
 .mem3 h4{
-    color: #ffde8a;
     display: inline;
 }
 .mem3 span{
@@ -242,7 +338,6 @@ html, body{
     position: relative;
     width: 49%;
     float: left;
-    
 }
 .map iframe{
     width: 90%;
@@ -255,7 +350,6 @@ html, body{
     width: 48%;
     float: right;
     background-color: #d7ccf5;
-   
 }
 .contactform h1{
     font-family: 'Pacifico', cursive;
@@ -296,23 +390,12 @@ html, body{
     height: 200px;
     background-color: #270C5B;
 }
-#weblogo2{
-    display: block;
-    width: 100px;
-    height: 65px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 10px;
-    margin: auto;
-}
-
 .soMedia{
     position: absolute;
     width: 155px;
     left: 0;
     right: 0;
-    top: 80px;
+    top: 15px;
     margin: auto;
 }
 .soMedia img{
@@ -320,13 +403,16 @@ html, body{
     height: 25px;
     margin: 5px;
 }
+.soMedia img:hover{
+    cursor: pointer;
+}
 .storeinfo{
     position: absolute;
     width: 320px;
     left: 0;
     right: 0;
     margin: auto;
-    top: 120px;
+    top: 50px;
     text-align: center;
     font-size: 9pt;
     color: white;
@@ -334,7 +420,6 @@ html, body{
 .storeinfo p{
     margin: 2px;
 }
-
 .complesession{
     position: relative;
     font-family: 'Pacifico', cursive;
@@ -343,13 +428,11 @@ html, body{
     text-align: center;
     top: 100px;
     width: 100vw;
-    height: 500px;
+    height: 800px;
 }
-
 .complesession span{
     font-size: 18pt;
 }
-
 .productsession{
     position: relative;
     width: 800px;
@@ -358,28 +441,37 @@ html, body{
     top: 200px;
 }
 .productLeft{
-    width: 40%;
+    width: 50%;
     float: left;
+    position: relative;
+    left: -200px;
 }
 .productLeft img{
     padding:1px;
     border:1px solid #021a40;
-    width: 280px;
-    height: 320px;
+    width: 500px;
+    height: 420px;
 }
 .productRight{
     width: 48%;
     text-align: left;
     float: right;
+    height: 420px;
 }
 .productRight h2{
     margin-top: 0px;
     color: #270C5B;
-    margin-bottom: 50px;
+    margin-bottom: -10px;
+    font-size: 24pt;
+}
+.productRight h3{
+    font-size: 18pt;
+}
+.productRight p{
+    font-size: 14pt;
 }
 .productRight span{
     margin-right: 10px;
-    
 }
 .addBut{
     border: 1px solid #1d4b5e;
@@ -389,32 +481,842 @@ html, body{
     background-color: #82cced;
     color: white;
     font-size: 10pt;
+	position: relative;
+    float: right;
+	right: 20px;
 }
-.addBut:hover{
-    background-color: #1b4d5e;
+.addBut:hover, .resetbut:hover{
+	background-color: #1b4d5e;
+	cursor: pointer;
+}
+.resetbut{
+	float: left;
+	border: 1px solid #1d4b5e;
+	border-radius: 2px;
+	text-align: center;
+	padding: 8px 16px;
+	background-color: #82cced;
+	color: white;
+	font-size: 10pt;
+	position: relative;
+    float: left;
+	left: 20px;
+}
+
+/*favourite page*/
+.mainsession{
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    top: 100px;
+}
+.sidebar{
+    display: table;
+    background-color: #D7CCF5;
+    position: relative;
+    width: 28%;
+    height: 900px;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+    color: #270C5B;
+}
+.sidebar a{
+    font-family: 'Pacifico', cursive;
+    font-size: 24pt;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 20px;
+}
+.sidebar a:hover{
+    color: white;
+}
+.sidebar button{
+    font-family: 'Pacifico', cursive;
+    background-color: none;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 22pt;
+    margin: 10px;
+}
+.sidebar button:hover{
+    color: white;
+}
+/*
+#mmenu{
+    top: 50px;
+    position: relative;
+}
+#sweet{
+    position: relative;
+    top: 70px;
+}
+#savoury{
+    position: relative;
+    top: 90px;
+}
+#afset{
+    position: relative;
+    top: 110px;
+}
+#mycart{
+    position: relative;
+    top: 130px;
+}
+*/
+.fapics{
+    position: relative;
+    width: 70%;
+    height: 750px;
+    float: right;
+    margin: auto;
+}
+.fapics h2{
+    text-align: center;
+    font-family : Pacifico;
+    font-size : 52px;
+    color : #270C5B;
+}
+.row1{
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+.i1d, .i3d{
+    position: relative;
+    text-align: center;
+    float: left;
+    width: 48%;
+}
+.i2d, .i4d{
+    position: relative;
+    text-align: center;
+    float: right;
+    width: 48%;
+}
+#i1name, #i2name, #i3name, #i4name{
+    font-size: 16pt;
+}
+.i1d img{
+    width: 420px;
+    height: 270px;
+    border: none;
+}
+.i2d img{
+    width: 420px;
+    height: 270px;
+    border: none;
+}
+.i3d img{
+    width: 420px;
+    height: 270px;
+    border: none;
+   
+}
+.i4d img{
+    width: 420px;
+	height: 270px;
+    border: none;
+}
+.i1d div, .i2d div, .i3d div, .i4d div{
+    position:relative;
+    text-align: center;
+}
+#img1, #img2, #img3, #img4{
     cursor: pointer;
 }
-@media only screen and (max-width: 550px){
+.praddBut{
+    border: 1px solid #1d4b5e;
+    border-radius: 2px;
+    text-align: center;
+    padding: 8px 16px;
+    background-color: #82cced;
+    color: white;
+    font-size: 10pt;
+	position: relative;
+}
+.praddBut:hover, .resetbut:hover, .linkbut:hover{
+	background-color: #1b4d5e;
+	cursor: pointer;
+}
+.linkbut{
+    border: 1px solid #1d4b5e;
+    border-radius: 25px;
+    text-align: center;
+    padding: 8px 16px;
+    background-color: #82cced;
+    color: white;
+    font-size: 10pt;
+	position: relative;
+}    
+.linkbut a{
+    text-decoration: none;
+}
+
+/*customized page*/
+#cyo{
+    position: relative;
+    height: 150px;
+}
+#cyo h2{
+    font-family: Pacifico;
+    font-size: 52px;
+    color: #270C5B;
+    text-align: center;
+}
+.toppings{
+    background-color: #fee5ab;
+	height: 430px;
+	width: 50%;
+	display: inline-block;
+    position: relative;
+}
+.toppings h2{
+    text-align: center;
+	font-family: DINPro;
+	font-size: 32px;
+	color : #270C5B;
+	font-weight: bold;
+}
+.base h2{
+    text-align: center;
+	font-family: DINPro;
+	font-size: 32px;
+	color : #270C5B;
+	font-weight: bold;
+}
+.icecream h2{
+    text-align: center;
+	font-family: DINPro;
+	font-size: 32px;
+	color : #270C5B;
+	font-weight: bold;
+}
+.tbasechoice{
+    width: 100%;
+    margin: auto;		
+	overflow: hidden;
+}
+.tbasechoice img{
+	width: 70px;  
+}
+.topiteml {
+    text-align: center;
+    float: left;
+	width: 25%;
+}
+.topiteml p{
+    font-family: DINPro;
+  	font-size : 20px;
+  	color : #270C5B;
+}
+.bbasechoice{
+    width: 100%;
+    height: 800px;
+    margin: auto;		
+	overflow: hidden;
+}
+.bbasechoice img{
+	width: 70px;  
+}
+.ibasechoice{
+    width: 100%;
+    height: 800px;
+    margin: auto;		
+	overflow: hidden;
+}
+.ibasechoice img{
+	width: 70px;  
+}
+.iceiteml {
+    text-align: center;
+    float: left;
+	width: 48%;
+}
+.iceiteml p{
+    font-family: DINPro;
+  	font-size : 20px;
+  	color : #270C5B;
+}
+.icecream{
+	background-color: #ffde8a;
+	float: right;
+	width: 25%;
+    height: 800px;
+    position: relative;
+}
+.base{
+    background-color: #feefc8;
+	width: 25%;
+	float: left;
+    height: 800px;
+	overflow: hidden;
+    position: relative;
+}
+.baseiteml {
+    text-align: center;
+    float: left;
+	width: 48%;
+}
+.baseiteml p{
+    font-family: DINPro;
+  	font-size : 20px;
+  	color : #270C5B;
+}
+#order{
+	height: 400px;
+	width: 50%;
+	display: inline-block;
+    position: relative;
+}
+#mydisplay{
+	width: 100%;
+	height: 275px;
+	position: relative;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+.waffles img{
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin:auto;
+}
+.somebtns{
+	position: relative;
+	text-align: center;
+}
+.disimgs{
+	position: absolute;
+	height: 225px;
+}
+#bicon{
+    width: 40px;
+    position: relative;
+    left: 85px;
+    top: -67px;
+}
+#ticon{
+    width: 40px;
+    position: relative;
+    left: 217px;
+    top: -67px;
+}
+#iicon{
+    width: 40px;
+    position: relative;
+    left: 40px;
+    top: -67px;
+}
+
+/*Shopping cart*/
+.yc h2{
+	font-family: 'Pacifico', cursive;
+	text-align: center;
+	font-size: 52px;
+	color: #1B4D5E;
+}
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-width: 2px;
+	width: 80%;
+	color: #1B4D5E; 
+} 
+.cawana p, .caquna p, .caprna p{
+	font-family: DINPro;
+	font-weight: bold;
+	font-size: 40px;
+	color: #1B4D5E;
+	text-align: center;
+	width: 33%;
+	float: left;
+	position: relative;
+	height: 10vh;
+}
+#mydisplay{
+	width: 100%;
+	height: 225px;
+	position: relative;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.cawaffle{
+	position: absolute;
+	width: 33%;
+	text-align: center;
+	float: left;
+	height: 40vh;
+	left: 60px;
+	top: 20px;
+}
+.cawaffleimg{
+	position: absolute;
+	width: 200px;
+	text-align: center;
+	left: 50px;
+}
+.price{
+	position: relative;
+	height: 40vh;
+	width: 100%;
+	float: right;
+}
+.caprice{
+	position: absolute;
+	right: 80px;
+	top: 95px;
+	font-family : DINPro;
+  	color : #1B4D5E;
+	font-size: 14pt;
+}
+.caquan{
+    padding: 10px 2px;
+    font-size: 14pt;
+    position: absolute;
+    left: 600px;
+    bottom: -15px;
+    text-align: center;
+    font-family: DINPro;
+    color: #1B4D5E;
+    margin-bottom: 80px;
+}
+.caquan:focus{
+	background-color: #f0f3f2;
+}
+.waimg{
+    width: 170px;
+    margin-bottom: 60px;
+}
+.ndiv{
+	margin-bottom: 80px;
+    top: 20px;
+	height: 20vh;
+    position: relative;
+}
+.debut{
+	position: absolute;
+	right: 30px;
+	top: 95px;
+	
+}
+.overdiv{
+	position: relative;
+	width: 90%;
+	height: 500px;
+	overflow: scroll;
+	overflow-x: hidden;
+	margin: 10px;
+}
+#final{
+	position: relative;
+    float: right;
+    text-align: center;
+    width: 33%;
+	font-family : DINPro;
+  	color : #1B4D5E;
+	font-size: 20pt;
+	right: -20px;
+	height: 10vh;
+    top: 15px;
+}
+.combut{
+	float: right;
+	border: 1px solid #1d4b5e;
+	border-radius: 2px;
+	text-align: center;
+	padding: 8px 16px;
+	background-color: #82cced;
+	color: white;
+	font-size: 18pt;
+	right: -300px;
+	position: relative;
+	bottom: -20px;
+}
+.cusbut:hover, .facbut:hover, .combut:hover{
+	background-color: #1b4d5e;
+	cursor: pointer;
+}
+.cusbut{
+	float: left;
+	border: 1px solid #1d4b5e;
+	border-radius: 2px;
+	text-align: center;
+	padding: 8px 16px;
+	background-color: #82cced;
+	color: white;
+	font-size: 10pt;
+	position: absolute;
+	left: 150px;
+	bottom: 50px;
+    text-decoration: none;
+}
+.facbut{
+	display: inline-block;
+	border: 1px solid #1d4b5e;
+	border-radius: 2px;
+	text-align: center;
+	padding: 8px 16px;
+	background-color: #82cced;
+	color: white;
+	font-size: 10pt;
+	position: absolute;
+	left: 600px;
+	bottom: 50px;
+}
+.facbut a{
+    text-decoration: none;
+    color: white;
+}
+.cusbut a{
+    text-decoration: none;
+    color: white;
+}
+.emptycart{
+   font-size: 17pt;
+	width: 400px;
+	height: 100px;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 90px;
+	bottom: 0;
+	margin: auto;
+	color: darkmagenta;
+}
+
+.premadeItem{
+	position: relative;
+	width: 15%;
+	text-align: center;
+	margin-bottom: 20px;
+    left: 130px;
+    top: 40px;
+}
+.cawana p, .caquna p, .caprna p{
+    font-size: 24px;
+    height: 6vh;
+}
+
+
+
+
+/*Mobile*/
+@media only screen and (max-width: 480px){
+    /*home*/
     #header{
         bottom: 0;
         position: fixed;
+        height: 85px;
+    }
+    #header ul li a{
+        font-size: 12pt;
+        display: none;
+    }
+    /*#header ul.left{
+        text-align: left;
+    }
+    #header ul.right{
+        text-align: right;
     }
     #aboutUs{
         display: none;
     }
     #contact{
         display: none;
+    }  */
+    .sidebar{
+        display: none;
+    }
+    .welcomesession{
+        top: -50px;
+        background-image: url(./stra_hero.jpg);
+        height: 500px;
+    }
+    #weblogo{
+        width: 90px;
+        height: 54px; 
+    }
+    .cartIcon{
+        background-size: 40px;
+        right:20px;
+        top: 15px;
+    }
+    .CreateYO{
+        top: -40px;
+    }
+    .step1{
+        margin-left:10px;
+    }
+    .step1 img{
+        float: none;
+        width: 95%;
+        /*height: 250px;*/
+    }
+    .step2{
+        margin-left: 10px;
+    }
+    .step2 img{
+        float: none;
+        width: 93.2%; 
+    }
+    .step3{
+        margin-left: 10px;
+    }
+    .step3 img{
+        float: none;
+        width: 93.2%;
+    }
+    .CTAbanner{
+        top: -30px;
+        height: 80px;
+    }
+    .aboutsession{
+        top: -20px;
+        height: 710px;
+    }
+    .aboutmsg{
+        width: 100%;
+    }
+    .aboutmsg p{
+        font-size: 14pt;
+    }
+    .vipmember{
+        top: 20px;
+        width: 100%;
+        left: 5px;
+    }
+    .mem1{
+        height: 180px;
+    }
+    .contactsession{
+        top: 20px;
+        height: 930px;
+    }
+    .map{
+        width: 100%;
+    }
+    .contactform{
+        top:20px;
+        width: 100%;
+    }
+    .footer{
+        height: 200px;
     }
     
-}
-
-
-@media only screen and (min-width: 550px) {
+/*  favourite page*/
+    .fapics{
+        width: 100%;
+    }
+    .i1d, .i2d, .i3d, .i4d{
+        width: 100%;
+    }
+    .i1d img, .i2d img, .i3d img, .i4d img{
+        height: 200px;
+        width: 350px;
+    }
+    #i1name, #i2name, #i3name, #i4name{
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
     #togglemobile-menu{
-        display: none;
+        display: inline-block;
+    }
+    #togglemobile-menu2{
+        display: inline-block;
     }
     .mobilemenu{
-        display: none;
+        display: inline-block;
+        left: -225px; 
     }
-
+    
+/*    create your own*/
+    .mainsession{
+        height: 1300px;
+    }
+    .base{
+        width: 100%;
+	    float: left;
+        height: 310px;
+    }
+    .mainsession{
+        top:-45px;
+    }
+    #cyo{
+        position: relative;
+        height: 80px;
+        margin: 4px;
+    }
+    #cyo h2{
+        font-size: 28pt;
+        margin-top: 45px;
+    }
+    .base h2{
+        margin-top: 10px;
+    }
+    .toppings h2{
+        margin-top: 10px;
+    }
+    #bicon{
+        left: 160px;
+    }
+    .baseiteml{
+        width: 33%;
+    }
+    .bbasechoice{
+        margin-top: -50px;
+        width: 80%;
+    }
+    .baseiteml p{
+        margin-top: 10px;
+        font-size: 18px;
+    }
+    .bbasechoice img {
+        width: 50px;
+    }
+    .toppings{
+        width: 100%;
+	    float: left;
+        height: 330px;
+    }
+    .topiteml{
+        width: 25%;
+    }
+    .topiteml p{
+        margin-top: 10px;
+        font-size: 18px;
+    }
+    #ticon{
+        left: 132px;
+    }
+    .tbasechoice{
+        margin-top: -40px;
+    }
+    .tbasechoice img {
+        width: 50px;
+    }
+    .iceiteml{
+        width: 33%;
+    }
+    .icecream{
+        width: 100%;
+	    float: left;
+        height: 310px;
+    }
+    .icecream h2{
+        margin-top: 10px;
+    }
+    #iicon{
+        left: 115px;
+    }
+    .ibasechoice {
+        margin-top: -40px;
+        width: 80%;
+    }
+    .ibasechoice img {
+        width: 50px;
+    }
+    .iceiteml p{
+        margin-top: 10px;
+        font-size: 18px;
+    }
+    #order{
+        width: 100%;
+        height: 300px;
+        float: left;
+        position: relative;
+    }
+    .somebtns{
+        height: 100px;
+    }
+    
+/*    Shopping cart*/
+    .premadeItem{
+        left: 35px;
+        width: 21%;
+    }
+    .caquan{ 
+        left: 200px;
+        top: 45px;
+        bottom: 30px;
+        font-size: 10pt;
+    }
+    .caprice{
+        right: 30px;
+        top: 53px;
+    }
+    .debut{
+        right: 0px;
+        top: 47px;
+    }
+    .cawaffleimg{
+        left: -80px;
+    }
+    .cawaffleimg img{
+        width: 40%;
+    }
+    .ndiv{
+        margin-bottom: -10px;
+    }
+    #final{
+        right: 30px;
+        top: 20px;
+        font-size: 16pt;
+    }
+    .combut{
+        bottom: -30px;
+        right: -110px;
+        position: relative;
+        font-size: 14pt;
+    }
+    .waimg{
+    width: 150px;
+    }
+    
+/*favourite page*/
+    .productsession{
+        width: 480px;
+    }
+    .productLeft{
+        width: 100%;
+        left: 60px;
+        top: -200px;
+    }
+    .productLeft img{
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 370px;
+        height: 200px;
+    }
+    .productRight{
+        position: relative;
+        top: -180px;
+        left: 60px;
+        width: 100%;
+        height：350px；
+    }
+    .productRight h2{
+        font-size: 20pt;
+    }
+    .productRight h3{
+        font-size: 16pt;
+    }
+    .productRight p{
+        width: 73%;
+    }
+    .productRight span{
+        font-size: 12pt;
+    }
 }
+
+
